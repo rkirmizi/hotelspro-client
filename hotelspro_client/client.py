@@ -34,7 +34,7 @@ class Coral(object):
                               nationality.
             :returns json -- Detailed search result.
         """
-        assert payload or isinstance(payload, dict), "Payload is required and \
+        assert payload and isinstance(payload, dict), "Payload is required and \
 must be a dict"
         resp = self.req_session.get(self.API_BASE_URL + "search",
                                     params=payload)
